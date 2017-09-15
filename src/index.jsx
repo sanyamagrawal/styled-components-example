@@ -22,5 +22,9 @@ injectGlobal`
       padding: 10rem;
       font-family: 'Lato';
   }
+
+  * {
+    outline: none;
+  }
 `;
 ReactDOM.render(<App />, window.document.getElementById('root'));

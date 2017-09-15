@@ -7,6 +7,25 @@ const StyledInformationCards = styled.div`
   display: flex;
 `;
 
+const onCardClick = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  console.info('Card Is Clicked');
+};
+const onDeleteClick = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  console.info('Delete Clicked');
+};
+const onEditClick = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  console.info('Edit Clicked');
+};
+
 const InformationList = () => {
   const detailsList = {
     email: 'sanyam4u@gmail.com',
@@ -21,6 +40,8 @@ const InformationList = () => {
         isEditable={true}
         isClickable={false}
         detailsList={detailsList}
+        onEditClick={onEditClick}
+        onDeleteClick={onDeleteClick}
       />
       <InformationCard
         name="John Smith"
@@ -28,6 +49,7 @@ const InformationList = () => {
         isEditable={false}
         isClickable={true}
         detailsList={detailsList}
+        onCardClick={onCardClick}
       />
       <InformationCard
         name="John Smith"
@@ -42,6 +64,9 @@ const InformationList = () => {
         isEditable={true}
         isClickable={true}
         detailsList={detailsList}
+        onCardClick={onCardClick}
+        onEditClick={onEditClick}
+        onDeleteClick={onDeleteClick}
       />
     </StyledInformationCards>
   );

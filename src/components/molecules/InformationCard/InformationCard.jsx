@@ -1,28 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _map from 'lodash/map';
 import _noop from 'lodash/noop';
 import styled from 'styled-components';
 
 import Icon from '../../atoms/Icon';
-import DetailListItem from './DetailListItem';
 import EditablePane from './EditablePane';
-
-const DetailList = ({ infoList }) => {
-  const items = _map(infoList, (value, key) => (
-    <DetailListItem value={value} key={key} type={key} />
-  ));
-
-  return (<div>{items}</div>);
-};
-
-DetailList.propTypes = {
-  infoList: PropTypes.object,
-};
-
-DetailList.defaultProps = {
-  infoList: {},
-};
+import DetailList from './DetailList';
 
 const InformationCardStyled = styled.div`
   display: flex;
@@ -81,7 +64,7 @@ class InformationCard extends React.PureComponent {
         </InformationContainer>
         <ActionCtn>
           { isClickable ? <Clickable><Icon icon="icon_arrow" size="30" /> </Clickable> : null }
-          <EditablePane isEditable={isEditable} />
+          <EditablePane isEditable={isEditable} {...this.props} />
         </ActionCtn>
       </InformationCardStyled>
     );
