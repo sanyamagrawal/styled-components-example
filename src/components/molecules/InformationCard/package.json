@@ -1,0 +1,7 @@
+{
+    "name": "information-card",
+    "private": true,
+    "version": "1.0.0",
+    "main": "./InformationCard.jsx"
+}
+  

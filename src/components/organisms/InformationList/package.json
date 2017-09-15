@@ -1,0 +1,7 @@
+{
+    "name": "information-list",
+    "private": true,
+    "version": "1.0.0",
+    "main": "./InformationList.jsx"
+}
+  
